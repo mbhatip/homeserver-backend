@@ -3,6 +3,7 @@ import time
 import requests
 
 def getPrice(id):
+    id = id.lower()
     with db.connect() as conn:
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Price WHERE id = ?", (id,))

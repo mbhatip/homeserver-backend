@@ -39,6 +39,7 @@ def makeNewUser():
         
 @app.get('/user/<ticker>')
 def getUserStock(ticker):
+    ticker = ticker.lower()
     try:
         body = request.json
         username = body['username']
@@ -52,6 +53,7 @@ def getUserStock(ticker):
 
 @app.post('/user/<ticker>')
 def exchangeStock(ticker):
+    ticker = ticker.lower()
     try:
         body = request.json
         username = body['username']
@@ -86,6 +88,7 @@ def getStockSummary():
 
 @app.get('/stock/<ticker>')
 def getStockInfo(ticker):
+    ticker = ticker.lower()
     try:
         return {"price": price.getPrice(ticker)}
     except Exception as e:
