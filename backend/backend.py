@@ -4,6 +4,7 @@ import db
 from user import User
 from stock import Stock
 import price
+from configparser import ConfigParser
 
 app = Bottle()
 
@@ -110,6 +111,11 @@ def deleteUser(id):
     response.content_type = 'application/json'
     return json.dumps(True)
 
+# read from ini file
+config = ConfigParser()
+config.read("settings.ini")
+host = config.get("DEFAULT", "host")
+port = config.get("DEFAULT", "port")
 
 # Start the backend
-run(app, host='localhost', port=8080, debug=True)
+run(app, host=host, port=port, debug=False)
