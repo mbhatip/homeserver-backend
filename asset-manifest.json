@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/mbhatip/comp426-website/static/css/main.b801a29a.chunk.css",
+    "main.js": "/mbhatip/comp426-website/static/js/main.6b5081f0.chunk.js",
+    "main.js.map": "/mbhatip/comp426-website/static/js/main.6b5081f0.chunk.js.map",
+    "runtime-main.js": "/mbhatip/comp426-website/static/js/runtime-main.01bbe9b1.js",
+    "runtime-main.js.map": "/mbhatip/comp426-website/static/js/runtime-main.01bbe9b1.js.map",
+    "static/js/2.557ffc52.chunk.js": "/mbhatip/comp426-website/static/js/2.557ffc52.chunk.js",
+    "static/js/2.557ffc52.chunk.js.map": "/mbhatip/comp426-website/static/js/2.557ffc52.chunk.js.map",
+    "index.html": "/mbhatip/comp426-website/index.html",
+    "static/css/main.b801a29a.chunk.css.map": "/mbhatip/comp426-website/static/css/main.b801a29a.chunk.css.map",
+    "static/js/2.557ffc52.chunk.js.LICENSE.txt": "/mbhatip/comp426-website/static/js/2.557ffc52.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.01bbe9b1.js",
+    "static/js/2.557ffc52.chunk.js",
+    "static/css/main.b801a29a.chunk.css",
+    "static/js/main.6b5081f0.chunk.js"
+  ]
+}
