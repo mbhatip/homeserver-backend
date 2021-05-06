@@ -113,7 +113,7 @@ def deleteUser(id):
 
 # read from ini file
 config = ConfigParser()
-config.read("settings.ini")
+config.read("../settings.ini")
 host = config.get("DEFAULT", "host")
 port = config.get("DEFAULT", "port")
 

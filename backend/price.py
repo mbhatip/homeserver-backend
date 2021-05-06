@@ -5,7 +5,7 @@ from configparser import ConfigParser
 
 def getToken():
     config = ConfigParser()
-    config.read('settings.ini')
+    config.read('../settings.ini')
     return config.get("DEFAULT", "token")
 
 def getPrice(id):
