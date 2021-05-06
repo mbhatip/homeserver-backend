@@ -114,8 +114,8 @@ def deleteUser(id):
 # read from ini file
 config = ConfigParser()
 config.read("../settings.ini")
-host = config.get("DEFAULT", "host")
-port = config.get("DEFAULT", "port")
+host = config.get("BACKEND", "host")
+port = config.get("BACKEND", "port")
 
 # Start the backend
 run(app, host=host, port=port, debug=False)

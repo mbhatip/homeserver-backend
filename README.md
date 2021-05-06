@@ -3,7 +3,7 @@ Welcome to my project. The idea behind it is to make a very basic stock market g
 make a settings.ini file in this directory with following format:
 
 ```
-[DEFAULT]
+[BACKEND]
 token = put polygon api token here
 host = hosting ip address here
 port = 79
