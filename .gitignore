@@ -1,5 +1,5 @@
 .vscode/settings.json
-#backend/settings.ini
+backend/settings.ini
 backend/.venv/
 backend/__pycache__/
 backend/website.db
