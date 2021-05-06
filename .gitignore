@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+settings.ini
+.vscode/settings.json
+backend/.venv/
+backend/__pycache__/
+backend/website.db
+frontend/node_modules/
