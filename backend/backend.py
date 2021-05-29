@@ -15,6 +15,11 @@ def verifiedUser(u, p):
     else:
         return user
 
+@app.get('/')
+def getRoot():
+    response.status=200
+    return "Nice job!"
+
 @app.get('/user')
 def getUserSummary():
     try:
@@ -25,7 +30,7 @@ def getUserSummary():
     except Exception as e:
         response.status = 400
         return f"Error: {e}"
-    return user 
+    return user
 
 @app.post('/user')
 def makeNewUser():
@@ -37,7 +42,7 @@ def makeNewUser():
         response.status = 400
         return f"Error: {e}"
     return User.find(body['username']).jsonable()
-        
+
 @app.get('/user/<ticker>')
 def getUserStock(ticker):
     ticker = ticker.lower()
