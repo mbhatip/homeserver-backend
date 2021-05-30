@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 settings.ini
-.vscode/settings.json
-backend/.venv/
-backend/__pycache__/
-backend/website.db
+.vscode
+.venv
+__pycache__
+website.db
