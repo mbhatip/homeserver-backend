@@ -5,6 +5,7 @@ from user import User
 from stock import Stock
 import price
 from configparser import ConfigParser
+import subprocess
 
 app = Bottle()
 
@@ -19,6 +20,17 @@ def verifiedUser(u, p):
 def getRoot():
     response.status=200
     return "Nice job!"
+
+@app.get('/status')
+def getStatus():
+    try:
+        msg = subprocess.check_output(["minecraftd", "status"])
+        msg += subprocess.check_output(["minecraftd", "command", "list"])
+    except Exception as e:
+        response.status = 400
+        return f"Error: {e}"
+    response.status=200
+    return msg
 
 @app.get('/user')
 def getUserSummary():
