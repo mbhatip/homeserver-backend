@@ -1,39 +1,32 @@
-import React, {Component} from 'react'
+import React, { useEffect, useState } from 'react'
 import Table from './Table'
-import Form from './Form'
+//import Form from './Form'
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            characters: [
-            ]
+function App() {
+
+    const [status, setStatus] = useState({'status': 'loading...'})
+    const [isLoading, setLoading] = useState(false)
+    useEffect(() => {
+        async function getStatus() {
+            const res = await fetch("https://memohat.xyz/api/status");
+            setStatus(await res.json())
+            setLoading(false)
         }
-        this.removeCharacter = this.removeCharacter.bind(this)
-    }
-    removeCharacter(i) {
-        this.setState({
-            characters: this.state.characters.filter((char, j) => {
-                return i !== j
-            })
-        })
-    }
-    
-    render() {
-        return (
-            <div className="container">
-                <Table
-                    characters={this.state.characters}
-                    remove={this.removeCharacter}
-                />
-                <Form
-                    handleSubmit={(char) => {
-                        this.setState({characters: [...this.state.characters, char]})
-                    }}
-                />
-            </div>
-        )
-    }
+        getStatus()
+    }, [isLoading])
+
+    return <div className="container">
+        <h1>Status: {isLoading ? "Loading..." : status.status}</h1>
+        <h1>Memory: {status.memory}</h1>
+        <button onClick={() => setLoading(true)}>
+            refresh
+        </button>
+        <h1>Users: {status.users.length}/20</h1>
+        <Table
+            users={status.users}
+        />
+    </div>
+
 }
 
 export default App

@@ -4,8 +4,8 @@ function TableHeader() {
     return (
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Job</th>
+                <th>Username</th>
+                <th>Avatar</th>
             </tr>
         </thead>
     )
@@ -15,14 +15,13 @@ function TableBody(props) {
     return (
         <tbody>
             {
-                props.characters.map((row, index) => {
+                props.users.map((user, index) => {
                     return (
                         <tr key={index}>
-                            <td>{row['name']}</td>
-                            <td>{row['job']}</td>
-                            <td>
-                                <button onClick={() => props.remove(index)}>Delete</button>
-                            </td>
+                            <td>{user['username']}</td>
+                            <td><img src={"https://www.mc-heads.net/avatar/" + user['uuid']}
+                            alt={user['username'] + " avatar"}
+                            width="100" height="100"></img></td>
                         </tr>
                     )
                 })
@@ -32,12 +31,14 @@ function TableBody(props) {
 }
 
 function Table(props){
+    if (!props.users) {
+        return null
+    }
     return (
         <table>
             <TableHeader />
             <TableBody
-                characters={props.characters}
-                remove={props.remove}
+                users={props.users}
             />
         </table>
     )
